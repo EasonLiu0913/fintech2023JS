@@ -18,16 +18,23 @@
 
         btn.addEventListener('click', function(){   
 
-            if(input.value){
-                const body = document.querySelector('body')
-                const newH1 = document.createElement('h1')
-                newH1.innerHTML = input.value
-                body.appendChild(newH1)
-                input.value = ''
+            if(input.type === 'password'){
+                input.type = 'text'
             }
             else{
-                alert('請填入任何文字訊息')
+                input.type = 'password'
             }
+
+            // if(input.value){
+            //     const body = document.querySelector('body')
+            //     const newH1 = document.createElement('h1')
+            //     newH1.innerHTML = input.value
+            //     body.appendChild(newH1)
+            //     input.value = ''
+            // }
+            // else{
+            //     alert('請填入任何文字訊息')
+            // }
 
         })
     </script>
