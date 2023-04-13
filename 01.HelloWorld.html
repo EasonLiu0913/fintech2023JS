@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hello World</title>
+        <!-- CSS -->
+        <style>
+            h1{
+
+            }
+
+            .box{
+                width: 200px;
+                height: 200px;
+                background-color: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- HTML -->
+        <h1>Hello World</h1>
+        <h1>Hello World2</h1>
+
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+
+        <script>
+            // JS 語言寫在這裡
+            console.log('Hi 某某人 你好');
+
+            // 取得 h1 標籤的控制權
+            document.getElementsByTagName('h1')[0].innerHTML = 'Eason'
+            document.getElementsByTagName('h1')[0].style.color = 'red';
+            console.log(document.getElementsByTagName('h1'));
+
+
+            // 宣告 一個變數(代名詞) 叫做 firstBox
+            var firstBox = document.querySelectorAll('.box')[0];
+
+            console.log('firstBox', firstBox)
+            firstBox.innerHTML = '<p>box</p>'
+            // 小駝峰命名法 取代連結符
+            firstBox.style.backgroundColor = 'green'
+
+
+            document.querySelectorAll('.box')[1].innerHTML = '<p>box</p>'
+            document.querySelectorAll('.box')[2].innerHTML = '<p>box</p>'
+            console.log('所有的 BOX' , document.querySelectorAll('.box'));
+
+        </script>
+    </body>
+</html>
