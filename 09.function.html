@@ -10,14 +10,49 @@
 
 <body>
     <script>
-        function square(number) {
-            return number * number;
+
+        // const squre = function (number) {
+        //     console.log('3');
+        //     return number * number;
+        // }
+
+        // squre(3)
+
+
+        // mutiple(5, 5);
+
+        // const result = mutiple(5, 3);
+
+        // console.log('result',result);
+
+
+            
+        function squre(number) {
+            return number * number
         }
 
-        const result = square(2)
+        // ES6 箭頭函式
+        // 由於缺少 FUNCTION 宣告，只好用宣告一個變數，再讓它等於箭頭函式
+        const abc = n => n * n
 
-        console.log('result',result);
+        console.log('typeof', typeof abc);
+        console.log('typeof', abc instanceof Object);
 
+
+        const parameter2 = (n1, n2) => n1 * n2
+        const parameterNone = () => 5*5
+
+        const right = () => { 
+            // console.log(6*6) 
+            // console.log(5*5);
+            return 3*3;
+        }
+        
+        const resultABC = right()
+        // console.log('resultABC', resultABC);
+
+        // DOM物件 本身自帶一個方法(Method) = 別人寫的函式
+        btn.addEventListener(字串, 函式)
     </script>
 </body>
 
