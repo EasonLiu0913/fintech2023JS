@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>append Child</title>
+</head>
+<body>
+    <button>Click</button>
+    <div id="product">
+        <!-- <img src="" alt=""> -->
+
+    </div>
+
+
+    <script>
+        const myName = 'Eason'
+
+        const myProduct = document.querySelector('#product')
+
+        const btn = document.querySelector('button')
+
+        btn.addEventListener('click',function(){
+            const newImg = document.createElement('img')
+            newImg.setAttribute('src', 'https://cdn.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_1280.jpg')
+            newImg.style.width = '200px'
+            myProduct.appendChild(newImg)
+
+            const myTitle = document.createElement('h3')
+            myTitle.innerHTML = '鬆餅'
+            myProduct.appendChild(myTitle)
+
+            const text = document.createElement('p')
+            // ES6 字串(文字) 可使用反引號(back tick)
+            // 又稱模板字串，模板就是已經建立好的 HTML 結構
+            text.innerHTML = `戶外下午茶
+            <span class="">最值得推薦${myName}的點心</span> 
+            ，充滿奶香的鬆餅加上酸甜莓果，
+            <span class="">大人小孩看了都心動</span>
+            ，若再配上咖啡跟美景就更完美。`
+
+            myProduct.appendChild(text)
+        })
+    </script>
+
+</body>
+</html>
