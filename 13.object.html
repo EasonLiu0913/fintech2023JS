@@ -32,6 +32,9 @@
       delete userData.key4
 
       console.log('userData', userData);
+      console.log('entries', Object.entries(userData) );
+      console.log('entries.length', Object.entries(userData).length );
+
 
       const showResult = function (event){
         const myKey = event.target.getAttribute('data-myKey')

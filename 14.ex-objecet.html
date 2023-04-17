@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex object</title>
+  </head>
+  <body>
+    <div id="mainMeal">
+      <button>1號餐</button>
+      <button>2號餐</button>
+      <button>3號餐</button>
+    </div>
+    <div id="sideMeal">
+      <button>A</button>
+      <button>B</button>
+      <button>C</button>
+    </div>
+    <div id="result">
+      <p>主餐你點的是：<span id="mainMealResult"></span></p>
+      <p>副餐你點的是：<span id="sideMealResult"></span></p>
+      <p>總價格：<span id="totalPrice"></span></p>
+    </div>
+
+    <script>
+      const mainMealMenu = {
+        '1號餐': { name: '大麥克', price: 72 },
+        '2號餐': { name: '雙層牛肉吉事堡', price: 62 },
+        '3號餐': { name: '嫩煎雞腿堡', price: 82 },
+      };
+
+      const sideMealMenu = {
+        A: { name: '中薯+飲料', price: 55 },
+        B: { name: '冰旋風+飲料', price: 85 },
+        C: { name: '麥克雞塊+薯條+飲料', price: 100 },
+      };
+
+      //   mainMeal
+      const mainMeal = document.querySelector('#mainMeal');
+      const mainMealResult = document.querySelector('#mainMealResult');
+      const totalPrice = document.querySelector('#totalPrice');
+
+      //   sideMeal
+      const sideMeal = document.querySelector('#sideMeal');
+      const sideMealResult = document.querySelector('#sideMealResult');
+
+      // 兩個函式，必須要有一個共通的橋樑，最簡單就是全域
+      let mainMealPrice = 0;
+      let sideMealPrice = 0;
+
+      mainMeal.addEventListener('click', function (event) {
+        const clickBtnText = event.target.innerText; //一號餐
+        const mealData = mainMealMenu[clickBtnText]; //{ name: "大麥克", price: 72 }
+        const mealName = mealData.name; //"大麥克"
+        const mealPrice = mealData.price; //72
+
+        mainMealResult.innerText = mealName;
+        mainMealPrice = mealPrice;
+        totalPrice.innerText = mainMealPrice + sideMealPrice;
+      });
+
+      sideMeal.addEventListener('click', function (event) {
+        const clickBtnText = event.target.innerText; //A
+        const mealData = sideMealMenu[clickBtnText]; //{ name: '中薯+飲料', price: 55 }
+        const mealName = mealData.name; //'中薯+飲料'
+        const mealPrice = mealData.price; //55
+
+        sideMealResult.innerText = mealName;
+        sideMealPrice = mealPrice;
+        totalPrice.innerText = mainMealPrice + sideMealPrice;
+      });
+    </script>
+  </body>
+</html>
