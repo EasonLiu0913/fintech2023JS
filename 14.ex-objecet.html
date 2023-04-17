@@ -36,6 +36,19 @@
         C: { name: '麥克雞塊+薯條+飲料', price: 100 },
       };
 
+      const menuData = {
+        main: {
+          '1號餐': { name: '大麥克', price: 72 },
+          '2號餐': { name: '雙層牛肉吉事堡', price: 62 },
+          '3號餐': { name: '嫩煎雞腿堡', price: 82 },
+        },
+        side: {
+          A: { name: '中薯+飲料', price: 55 },
+          B: { name: '冰旋風+飲料', price: 85 },
+          C: { name: '麥克雞塊+薯條+飲料', price: 100 },
+        },
+      };
+
       //   mainMeal
       const mainMeal = document.querySelector('#mainMeal');
       const mainMealResult = document.querySelector('#mainMealResult');
@@ -49,27 +62,52 @@
       let mainMealPrice = 0;
       let sideMealPrice = 0;
 
-      mainMeal.addEventListener('click', function (event) {
-        const clickBtnText = event.target.innerText; //一號餐
-        const mealData = mainMealMenu[clickBtnText]; //{ name: "大麥克", price: 72 }
+      function showOrder(mealType) {
+        // console.log('mealType', mealType);
+        // console.log('event.target', event.target);
+
+        const allMealData = menuData[mealType];
+        const clickBtnText = event.target.innerText; //一號餐, A
+
+        const mealData = allMealData[clickBtnText]; //{ name: "大麥克", price: 72 }
         const mealName = mealData.name; //"大麥克"
         const mealPrice = mealData.price; //72
 
-        mainMealResult.innerText = mealName;
-        mainMealPrice = mealPrice;
+        if (mealType === 'main') {
+          mainMealResult.innerText = mealName;
+          mainMealPrice = mealPrice;
+        } else {
+          sideMealResult.innerText = mealName;
+          sideMealPrice = mealPrice;
+        }
         totalPrice.innerText = mainMealPrice + sideMealPrice;
-      });
+      }
 
-      sideMeal.addEventListener('click', function (event) {
-        const clickBtnText = event.target.innerText; //A
-        const mealData = sideMealMenu[clickBtnText]; //{ name: '中薯+飲料', price: 55 }
-        const mealName = mealData.name; //'中薯+飲料'
-        const mealPrice = mealData.price; //55
+      mainMeal.addEventListener('click', () => showOrder('main'));
 
-        sideMealResult.innerText = mealName;
-        sideMealPrice = mealPrice;
-        totalPrice.innerText = mainMealPrice + sideMealPrice;
-      });
+      sideMeal.addEventListener('click', () => showOrder('side'));
+
+      // mainMeal.addEventListener('click', function (event) {
+      // const clickBtnText = event.target.innerText; //一號餐
+      // const mealData = mainMealMenu[clickBtnText]; //{ name: "大麥克", price: 72 }
+      // const mealName = mealData.name; //"大麥克"
+      // const mealPrice = mealData.price; //72
+
+      // mainMealResult.innerText = mealName;
+      // mainMealPrice = mealPrice;
+      // totalPrice.innerText = mainMealPrice + sideMealPrice;
+      // });
+
+      // sideMeal.addEventListener('click', function (event) {
+      // const clickBtnText = event.target.innerText; //A
+      // const mealData = sideMealMenu[clickBtnText]; //{ name: '中薯+飲料', price: 55 }
+      // const mealName = mealData.name; //'中薯+飲料'
+      // const mealPrice = mealData.price; //55
+
+      // sideMealResult.innerText = mealName;
+      // sideMealPrice = mealPrice;
+      // totalPrice.innerText = mainMealPrice + sideMealPrice;
+      // });
     </script>
   </body>
 </html>
