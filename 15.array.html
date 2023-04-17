@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array</title>
+  </head>
+  <body>
+    <div id="sideMeal"></div>
+
+    <script>
+      const sideMeal = document.querySelector('#sideMeal');
+
+      const myArray = ['一號餐', '二號餐', '三號餐', '四號餐'];
+
+      console.log('myArray.length', myArray.length);
+
+      // array 陣列最常用來寫迴圈
+      // 迴圈的好處就是可以不用一直重複寫功能
+      // for 迴圈的格式，小括號裡面會有三個參數，用分號隔開
+      // 1.宣告變數，通常會宣告一個索引值(index)，用來代表現在跑第幾次
+      // 2.限制迴圈的執行次數。只要判斷式為 TRUE 就執行，FALSE 迴圈就完全停止。
+      // 3.每執行一次迴圈，就會來執行第三步的動作，為了避免無窮迴圈的產生。
+      for (let i = 0; i < myArray.length; i++) {
+        console.log('hi', i);
+        console.log('hi', myArray[i]);
+
+        const btn = document.createElement('button');
+        btn.innerText = myArray[i];
+        sideMeal.appendChild(btn);
+      }
+
+      //   const btn = document.createElement('button');
+      //   btn.innerText = myArray[0];
+      //   sideMeal.appendChild(btn);
+
+      //   const btn1 = document.createElement('button');
+      //   btn1.innerText = myArray[1];
+      //   sideMeal.appendChild(btn1);
+
+      //   const btn2 = document.createElement('button');
+      //   btn2.innerText = myArray[2];
+      //   sideMeal.appendChild(btn2);
+    </script>
+  </body>
+</html>
