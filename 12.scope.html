@@ -1,61 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>scope 作用域</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        // script 就是全域
-        // var 是被 FUNCTION 限制住範圍
-        // LET 只需要大括號即可限制
+      // script 就是全域
+      // var 是被 FUNCTION 限制住範圍
+      // LET 只需要大括號即可限制
 
-        // 父層
-        var x = 50;
-        let y = 200;
-        
-        function a(){
-            // a家 區域
-            // 子層
-            var x = 10;
-            let y = 20;
+      // 父層
 
-            x = 100;
-            console.log('inside a', x);
+      function b() {
+        // b家
+        x = 200;
+        console.log("inside b", x);
+      }
 
-            b(x)
-        }
+      b();
 
-        a()
+      console.log("outside", x);
 
-        function b(x){
-            // b家
-            x = 200;
-            console.log('inside b',x);
-        }
-        
+      // 作用域是指我們的變數會在甚麼[範圍]內生效。
+      // 全域變數 VS 區域變數
+      // 新手常常使用全域變數因為比較簡單，缺點也是太方便而會互相影響
 
-        console.log('outside', x);
+      // 真。全域
+      // document.getElementById
 
+      // var 宣告全域變數的時候，會放到 WINDOW 底下
+      // let 雖然也是全域，但不會改到 window 原本的參數
+      // let alert = 10;
 
-        // 作用域是指我們的變數會在甚麼[範圍]內生效。
-        // 全域變數 VS 區域變數
-        // 新手常常使用全域變數因為比較簡單，缺點也是太方便而會互相影響
-
-        // 真。全域
-        document.getElementById
-
-        // var 宣告全域變數的時候，會放到 WINDOW 底下
-        // let 雖然也是全域，但不會改到 window 原本的參數
-        // let alert = 10;
-
-        // console.log('alert', alert);
-
-        
-
-
+      // console.log('alert', alert);
     </script>
-</body>
+  </body>
 </html>

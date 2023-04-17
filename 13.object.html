@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>object</title>
+  </head>
+  <body>
+    <button id="name">name</button>
+    <button id="email">email</button>
+    <button id="tel">tel</button>
+
+    <h1 id="result"></h1>
+
+    <script>
+      const nameBtn = document.querySelector("#name");
+      const emailBtn = document.querySelector("#email");
+      const telBtn = document.querySelector("#tel");
+      const resultH1 = document.querySelector("#result");
+
+      const userData = {
+        name: "Eason",
+        email: "bettercalleason@gmail.com",
+        tel: "0912345678",
+      };
+
+      nameBtn.addEventListener('click', showResult)
+      telBtn.addEventListener('click', showResult)
+      emailBtn.addEventListener('click', showResult)
+
+      function showResult(event){
+        console.log('event:', event.target.innerHTML);
+        const buttonText = event.target.innerHTML;
+        resultH1.innerHTML = userData[buttonText]
+      }
+
+
+
+
+      //如果我想取得 value1，可以呼叫 myObj 變數，並且使用中括號裡面放 key (名稱記得加引號)
+
+    //   const myKey = "email";
+
+    //   console.log("中括號:", userData[myKey]);
+
+      //另一種取得 value1 的方法，可以直接用「點表示法」來呼叫 Object 裡的 key
+    //   console.log("點表示法:", userData.myKey);
+    </script>
+  </body>
+</html>
