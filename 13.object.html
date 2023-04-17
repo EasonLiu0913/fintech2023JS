@@ -7,9 +7,9 @@
     <title>object</title>
   </head>
   <body>
-    <button id="name">name</button>
-    <button id="email">email</button>
-    <button id="tel">tel</button>
+    <button id="name" data-myKey="name">name123</button>
+    <button id="email" data-myKey="email">email123</button>
+    <button id="tel" data-myKey="tel">tel123</button>
 
     <h1 id="result"></h1>
 
@@ -25,15 +25,25 @@
         tel: "0912345678",
       };
 
+      userData.key4 = 'value4'
+      userData['key5'] = 'value5'
+
+      userData.key4 = ''
+      delete userData.key4
+
+      console.log('userData', userData);
+
+      const showResult = function (event){
+        const myKey = event.target.getAttribute('data-myKey')
+        const myValue = userData[myKey]
+        resultH1.innerHTML = myValue
+      }
+
       nameBtn.addEventListener('click', showResult)
       telBtn.addEventListener('click', showResult)
       emailBtn.addEventListener('click', showResult)
 
-      function showResult(event){
-        console.log('event:', event.target.innerHTML);
-        const buttonText = event.target.innerHTML;
-        resultH1.innerHTML = userData[buttonText]
-      }
+      
 
 
 
