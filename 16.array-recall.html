@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+<body>
+    <script>
+        const myArray = [ 'My value1', 'My value2', [0,1,2] , 'My value4'];
+
+        // myArray.push('my value4')
+        // const myPopResult = myArray.pop()
+        // myArray.unshift('new value0')
+        // const myShiftResult = myArray.shift()
+
+        // myArray[myArray.length] = 'my value4'
+        // myArray[myArray.length] = 'my value5'
+
+        // myArray[0] = 'new value'
+
+        // console.log('myPopResult', myPopResult);
+        // console.log('myShiftResult', myShiftResult);
+
+
+        // 淺層複製
+        // const mySliceResult = myArray.slice()
+        // console.log('mySliceResult',mySliceResult);
+
+        // 深層複製(先轉字串，再轉回物件)
+        // JSON.stringify() 轉字串
+        // JSON.parse() 轉物件
+        // 唯一要注意的是，如果裡面的資料是 Function 的話，parse() 無法轉換。
+        // const stringify = JSON.stringify(myArray)
+        // console.log('stringify',stringify);
+        // const newObj = JSON.parse(stringify)
+
+        // 寫成一行的話
+        // const newObj2 = JSON.parse(JSON.stringify(myArray))
+        
+
+        // myArray[2][0] = 'abc'
+        // console.log('newObj', newObj);
+
+        const myspliceData =  myArray.splice(2,0,[4,5,6],'new1', 'new2', [6,6,6])
+        console.log('myspliceData',myspliceData);
+
+        console.log('myArray', myArray);
+
+    </script>
+</body>
+</html>
