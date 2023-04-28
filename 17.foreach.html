@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>foreach</title>
+</head>
+
+<body>
+    <script>
+        // const myArray = [ 'a', 'b','c','d'];
+
+        // const reduceResult = myArray.reduce((accumulator, currentValue, index, originalArray) => {
+        //     accumulator = accumulator + currentValue;
+        //     // accumulator += currentValue;
+        //     return accumulator;
+        // }, '')
+
+        // console.log('reduceResult',reduceResult);
+
+        // myArray.forEach(function(value, index, array){
+        //     // console.log('value', value);
+        //     // console.log('index', index);
+        //     // console.log('array',array);
+        //     array[index] = value + 1;
+        // })
+
+        // const newArray =  myArray.map(function(v, i, arr){
+        //     if(v >= 3) return v+i
+        // })
+
+        // const filterArray = myArray.filter(v=> v >= 3).map((v, i)=> v + i)
+
+        // myArray.filter(function(v){
+        //     return v >= 3;
+        // }).map(function(v, i){
+        //     return v + i
+        // })
+
+        // console.log('filterArray', filterArray);
+
+        // console.log('myArray', myArray);
+
+
+        const myString = 'Hello, Eason'
+
+        const isEason = myString.indexOf('Eason') > -1
+
+        console.log('isEason',isEason);
+
+        const stringArray = ['fasdfa','fasdg','aszgh','zxvcz','hnrte']
+        
+        const filterRes = stringArray.filter((v)=> v.indexOf('fa')> -1)
+        console.log('filterRes',filterRes);
+
+    </script>
+</body>
+
+</html>
